@@ -11,7 +11,7 @@ questions:
   show_subquestion_if: false
   subquestions:
   - variable: elasticsearch.image.repository
-    default: "docker.elastic.co/elasticsearch/elasticsearch-oss"
+    default: "itx-aed.artifactrepo.jnj.com/elasticsearch/elasticsearch-oss"
     description: "Elasticsearch image name"
     type: string
     label: ElasticSearch Image Name
@@ -21,7 +21,7 @@ questions:
     type: string
     label: Elasticsearch Image Tag
   - variable: kibana.image.repository
-    default: "docker.elastic.co/kibana/kibana-oss"
+    default: "itx-aed.artifactrepo.jnj.com/kibana/kibana-oss"
     description: "Kibana image name"
     type: string
     label: Kibana Image Name
@@ -31,7 +31,7 @@ questions:
     type: string
     label: Kibana Image Tag
   - variable: fluent-bit.image.fluent_bit.repository
-    default: "fluent/fluent-bit"
+    default: "itx-aed.artifactrepo.jnj.com/fluent/fluent-bit"
     description: "Fluent-Bit image name"
     type: string
     label: Fluent-Bit Image Name
