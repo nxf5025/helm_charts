@@ -110,7 +110,7 @@ spec:
         - mountPath: /usr/share/elasticsearch/data
           name: es-data
       imagePullSecrets:
-        - name: .Values.image.pullSecrets
+        - name: {{ .Values.image.pullSecrets }}
       volumes:
   {{- if not .Values.master.persistence.enabled }}
       - name: es-data

@@ -55,7 +55,7 @@ spec:
           readOnly: true
 {{ end }}
       imagePullSecrets:
-        - name: .Values.image.pullSecrets
+        - name: {{ .Values.image.pullSecrets }}
       terminationGracePeriodSeconds: 10
     {{- if .Values.nodeSelector }}
       nodeSelector:
