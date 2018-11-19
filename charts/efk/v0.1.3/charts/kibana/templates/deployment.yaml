@@ -57,9 +57,9 @@ spec:
         #     path: /ping
         #     port: {{ .Values.service.internalPort }}
         resources:
-{{ toYaml .Values.resources | indent 10 }}
       imagePullSecrets:
-      - name: "{{ .Values.image.registry_secret }}"
+        - name: .Values.image.pullSecrets
+{{ toYaml .Values.resources | indent 10 }}
     {{- if .Values.affinity }}
       affinity:
 {{ toYaml .Values.affinity | indent 8 }}

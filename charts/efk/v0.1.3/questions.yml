@@ -11,7 +11,7 @@ questions:
   show_subquestion_if: false
   subquestions:
   - variable: elasticsearch.image.repository
-    default: "itx-aed.artifactrepo.jnj.com/elasticsearch/elasticsearch-oss"
+    default: "docker.elastic.co/elasticsearch/elasticsearch-oss"
     description: "Elasticsearch image name"
     type: string
     label: ElasticSearch Image Name
@@ -20,8 +20,18 @@ questions:
     description: "Elasticsearch image tag"
     type: string
     label: Elasticsearch Image Tag
+  - variable: busybox.image.repository
+    default: "busybox"
+    description: "Busybox image name"
+    type: string
+    label: Busybox Image Name
+  - variable: busybox.image.tag
+    default: "latest"
+    description: "busybox image tag"
+    type: string
+    label: Busybox Image Tag
   - variable: kibana.image.repository
-    default: "itx-aed.artifactrepo.jnj.com/kibana/kibana-oss"
+    default: "docker.elastic.co/kibana/kibana-oss"
     description: "Kibana image name"
     type: string
     label: Kibana Image Name
@@ -31,7 +41,7 @@ questions:
     type: string
     label: Kibana Image Tag
   - variable: fluent-bit.image.fluent_bit.repository
-    default: "itx-aed.artifactrepo.jnj.com/fluent/fluent-bit"
+    default: "fluent/fluent-bit"
     description: "Fluent-Bit image name"
     type: string
     label: Fluent-Bit Image Name
@@ -40,9 +50,14 @@ questions:
     description: "Fluent-Bit image tag"
     type: string
     label: Fluent-Bit Image Tag
+  - variable: image.pullSecrets
+    default: ""
+    description: "Image Pull Secret Name"
+    type: string
+    label: Image Pull Secret Name
 # elasticsearch settings
 - variable: elasticsearch.master.heapSize
-  default: "1g"
+  default: "512m"
   description: "The value depends on the amount of RAM available on your server"
   type: enum
   label: Elasticsearch JVM Heap Size
@@ -84,7 +99,7 @@ questions:
     label: Elasticsearch Persistent Volume Size
 # kibana settings
 - variable: kibana.ingress.enabled
-  default: false
+  default: true
   description: "Expose kibana using Layer 7 Load Balancer - ingress"
   type: boolean
   group: "Kibana"

@@ -1,14 +1,18 @@
 # Default values for efk.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
+busybox:
+  image:
+    repository: "busybox"
+    tag: "latest"
+
 rbac:
   create: true
 securityContextEnable: true
 
 image:
-  repository: "itx-aed.artifactrepo.jnj.com/elasticsearch/elasticsearch-oss"
+  repository: "docker.elastic.co/elasticsearch/elasticsearch-oss"
   tag: "6.2.4"
-  registry_secret: "artifactory-itx-aed"
   pullPolicy: "IfNotPresent"
 
 terminationGracePeriodSeconds: 30  # Duration in seconds a elasticsearch pod needs to terminate gracefully.
